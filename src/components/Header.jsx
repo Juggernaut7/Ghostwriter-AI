@@ -5,7 +5,8 @@ import Button from './ui/Button';
 import WritingContext  from '../contexts/WritingContext';
 import { AuthContext } from '../contexts/AuthContext';
 import logo from "../assets/logo.jpg";
-const Header = ({ openAuthModal }) => {
+
+const Header = ({ openAuthModal, toggleSidebar }) => {
   const { isAuthenticated, user, logout } = useContext(AuthContext);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -16,6 +17,13 @@ const Header = ({ openAuthModal }) => {
   return (
     <header className="fixed top-0 left-0 right-0 h-16 bg-[#0F0A14] border-b border-[#5D3FD3]/20 flex items-center justify-between px-4 sm:px-8 z-50">
       <div className="flex items-center gap-4">
+        <button
+          className="md:hidden p-2 mr-2"
+          onClick={toggleSidebar}
+          aria-label="Toggle Sidebar"
+        >
+          <Menu className="w-6 h-6 text-[#C7F9CC]" />
+        </button>
         <img
           src={logo}
           alt="GhostWriter AI Logo"

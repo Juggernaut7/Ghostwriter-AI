@@ -21,7 +21,7 @@ const Playground = () => {
       <div className="flex pt-16">
         <SidebarControls isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <motion.main
-          className="flex-1 p-4 sm:p-8 md:ml-64 max-w-4xl mx-auto"
+          className="flex-1 p-4 sm:p-6 md:p-8 md:ml-64 max-w-4xl mx-auto w-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
