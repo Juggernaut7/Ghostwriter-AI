@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .toast-success {
+    background-color: #5D3FD3;
+    color: #C7F9CC;
+  }
+  .toast-error {
+    background-color: #EF4444;
+    color: #C7F9CC;
+  }
+}
