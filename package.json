@@ -5,32 +5,38 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "npm run typecheck && npm run build:executa && vite build",
+    "lint": "eslint app executas tests",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "build:executa": "tsc -p executas/tsconfig.json",
+    "test": "npm run build:executa && node --test tests/*.test.mjs",
+    "anna:validate": "anna-app validate --manifest manifest.json --bundle bundle",
+    "anna:dev": "anna-app dev --manifest manifest.json --bundle bundle",
+    "anna:dev:offline": "anna-app dev --manifest manifest.json --bundle bundle --no-llm"
   },
   "dependencies": {
-    "axios": "^1.10.0",
-    "framer-motion": "^12.23.5",
+    "@fontsource/dm-mono": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/newsreader": "^5.3.0",
+    "jspdf": "^4.2.1",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-lottie": "^1.2.10",
-    "react-router-dom": "^7.6.3",
-    "react-toastify": "^11.0.5"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@anna-ai/cli": "^0.1.56",
     "@eslint/js": "^9.30.1",
+    "@types/node": "^26.6.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
-    "autoprefixer": "^10.4.21",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.0",
     "vite": "^7.0.4"
   }
 }

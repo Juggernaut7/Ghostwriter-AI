@@ -1,0 +1,10 @@
+{
+  "slug": "ghostwriter-ai",
+  "name": "Ghostwriter AI workflow engine",
+  "version": "1.0.0",
+  "executa_type": "tool",
+  "description": "Validates workflow inputs and prepares centralized writing prompts.",
+  "tool_id": "tool-dev-ghostwriter-ai",
+  "type": "node",
+  "command": ["node", "plugin.mjs"]
+}
