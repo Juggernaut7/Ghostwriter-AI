@@ -12,8 +12,8 @@
     "build:executa": "tsc -p executas/tsconfig.json",
     "test": "npm run build:executa && node --test tests/*.test.mjs",
     "anna:validate": "anna-app validate --manifest manifest.json --bundle bundle",
-    "anna:dev": "anna-app dev --manifest manifest.json --bundle bundle",
-    "anna:dev:offline": "anna-app dev --manifest manifest.json --bundle bundle --no-llm"
+    "anna:dev": "anna-app dev --manifest manifest.json --bundle bundle --slug ghostwriter-ai",
+    "anna:dev:offline": "anna-app dev --manifest manifest.json --bundle bundle --slug ghostwriter-ai --no-llm"
   },
   "dependencies": {
     "@fontsource/dm-mono": "^5.3.0",
