@@ -4,9 +4,11 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: './',
   build: {
     target: 'es2015',
-    outDir: 'dist',
+    outDir: 'bundle',
+    emptyOutDir: true,
     sourcemap: false,
     minify: 'esbuild',
   },

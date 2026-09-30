@@ -1,0 +1,38 @@
+{
+  "schema": 2,
+  "required_executas": [
+    {
+      "tool_id": "tool-dev-ghostwriter-ai"
+    }
+  ],
+  "tags": ["writing", "productivity", "creator-tools"],
+  "ui": {
+    "bundle": {
+      "format": "static-spa",
+      "entry": "index.html",
+      "external_origins": []
+    },
+    "views": [
+      {
+        "name": "main",
+        "title": "Ghostwriter AI",
+        "default": true,
+        "default_size": { "w": 1120, "h": 760 },
+        "min_size": { "w": 360, "h": 560 }
+      }
+    ],
+    "host_api": {
+      "tools": ["tool-dev-ghostwriter-ai"],
+      "llm": ["stream", "complete"],
+      "storage": ["get", "set"],
+      "window": ["set_title", "ready"]
+    },
+    "csp_overrides": {},
+    "state_merge": "last_writer_wins"
+  },
+  "dev": {
+    "fixtures": ["fixtures/*.jsonl"],
+    "seed_storage": {},
+    "user_id": 1
+  }
+}

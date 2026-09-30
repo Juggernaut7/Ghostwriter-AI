@@ -13,6 +13,8 @@ node_modules
 # Build output
 dist
 dist-ssr
+bundle
+executas/dist
 
 # Local environment settings
 *.local
