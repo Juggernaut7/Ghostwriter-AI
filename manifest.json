@@ -2,7 +2,7 @@
   "schema": 2,
   "required_executas": [
     {
-      "tool_id": "tool-dev-ghostwriter-ai"
+      "tool_id": "bundled:ghostwriter"
     }
   ],
   "tags": ["writing", "productivity", "creator-tools"],
@@ -15,14 +15,14 @@
     "views": [
       {
         "name": "main",
-        "title": "Ghostwriter AI",
+        "title": "Ghostwriter",
         "default": true,
         "default_size": { "w": 1120, "h": 760 },
         "min_size": { "w": 360, "h": 560 }
       }
     ],
     "host_api": {
-      "tools": ["tool-dev-ghostwriter-ai"],
+      "tools": ["bundled:ghostwriter"],
       "llm": ["stream", "complete"],
       "storage": ["get", "set"],
       "window": ["set_title", "ready"]

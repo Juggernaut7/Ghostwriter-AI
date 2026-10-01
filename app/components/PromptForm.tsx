@@ -47,7 +47,7 @@ export function PromptForm({ fields, values, busy, connected, onChange, onSubmit
         {busy ? 'Writing…' : 'Generate'}
         {!busy && <ArrowRight aria-hidden="true" size={15} />}
       </button>
-      {!connected && <p className="form-note">Open Ghostwriter AI inside Anna to generate with its native model.</p>}
+      {!connected && <p className="form-note">Open Ghostwriter inside Anna to generate with its native model.</p>}
     </form>
   );
 }

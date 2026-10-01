@@ -1,5 +1,6 @@
 import { Check, Cloud, Fingerprint } from 'lucide-react';
 import { useState } from 'react';
+import ghostwriterLogo from '../../src/assets/logo.png';
 
 interface SettingsProps {
   connected: boolean;
@@ -25,8 +26,13 @@ export function Settings({ connected, initialSamples, onSaveSamples }: SettingsP
   return (
     <div className="settings-page">
       <header className="page-intro">
-        <p className="eyebrow">WORKSPACE PREFERENCES</p>
-        <h1>Settings</h1>
+        <div className="settings-header-brand">
+          <img src={ghostwriterLogo} alt="" aria-hidden="true" className="settings-brand-mark" />
+          <div>
+            <p className="eyebrow">WORKSPACE PREFERENCES</p>
+            <h1>Settings</h1>
+          </div>
+        </div>
         <p className="intro">Keep your writing environment and voice close to how you work.</p>
       </header>
       <section className="settings-section">

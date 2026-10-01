@@ -1,6 +1,14 @@
 {
-  "name": "ghostwriter-ai",
+  "slug": "ghostwriter-ai",
+  "name": "Ghostwriter",
+  "version": "0.1.0",
+  "bundled_executas": {
+    "ghostwriter": {
+      "path": "executas/ghostwriter"
+    }
+  },
   "tagline": "From first thought to ready-to-publish writing.",
   "description": "A structured AI writing workspace for drafts, rewrites, threads, summaries, and email.",
-  "category": "productivity"
+  "category": "productivity",
+  "logo_file": "public/logo.png"
 }

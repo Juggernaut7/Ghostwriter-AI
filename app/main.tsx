@@ -12,14 +12,30 @@ import '@fontsource/newsreader/500.css';
 import '@fontsource/newsreader/600.css';
 import './styles/global.css';
 
-const rootElement = document.getElementById('root');
+async function loadAnnaToolIds() {
+  if (window.parent === window || window.__ANNA_TOOL_IDS__) return;
 
-if (!rootElement) {
-  throw new Error('Root element #root was not found.');
+  await new Promise<void>((resolve) => {
+    const sidecar = document.createElement('script');
+    sidecar.src = new URL('./anna-tool-ids.js', document.baseURI).toString();
+    sidecar.onload = () => resolve();
+    sidecar.onerror = () => resolve();
+    document.head.append(sidecar);
+  });
 }
 
-createRoot(rootElement).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+function renderApp() {
+  const rootElement = document.getElementById('root');
+
+  if (!rootElement) {
+    throw new Error('Root element #root was not found.');
+  }
+
+  createRoot(rootElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  );
+}
+
+void loadAnnaToolIds().then(renderApp);

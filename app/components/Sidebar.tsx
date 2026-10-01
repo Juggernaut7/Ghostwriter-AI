@@ -1,4 +1,5 @@
 import { BookOpenText, FileText, LayoutDashboard, Mail, PenLine, Settings2, WandSparkles } from 'lucide-react';
+import ghostwriterLogo from '../../src/assets/logo.png';
 import { HistoryPanel } from './HistoryPanel';
 import type { PageId, WritingDocument } from '../types/domain';
 
@@ -24,7 +25,7 @@ export function Sidebar({ activePage, connectionReady, documents, onNavigate, on
   return (
     <aside className="sidebar">
       <a className="brand" href="#dashboard" onClick={(event) => { event.preventDefault(); onNavigate('dashboard'); }}>
-        <span className="brand-mark">G</span>
+        <img className="brand-mark" src={ghostwriterLogo} alt="" aria-hidden="true" />
         <span>ghostwriter<span className="brand-ai">.ai</span></span>
       </a>
       <div className="workspace-label">WORKSPACE</div>

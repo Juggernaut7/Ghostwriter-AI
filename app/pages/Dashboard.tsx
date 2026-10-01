@@ -1,4 +1,5 @@
 import { ArrowRight, BookOpenText, FileText, Mail, PenLine, WandSparkles } from 'lucide-react';
+import ghostwriterLogo from '../../src/assets/logo.png';
 import type { WorkflowId, WritingDocument } from '../types/domain';
 
 interface DashboardProps {
@@ -19,9 +20,14 @@ export function Dashboard({ documents, onCreate, onOpen }: DashboardProps) {
   return (
     <div className="dashboard-page">
       <section className="welcome-block">
-        <p className="eyebrow">YOUR WRITING DESK</p>
-        <h1>Make something<br />worth reading.</h1>
-        <p className="intro">A clear path from the first rough thought to the final, ready-to-publish draft.</p>
+        <div className="welcome-copy">
+          <p className="eyebrow">YOUR WRITING DESK</p>
+          <h1>Make something<br />worth reading.</h1>
+          <p className="intro">A clear path from the first rough thought to the final, ready-to-publish draft.</p>
+        </div>
+        <div className="welcome-badge" aria-hidden="true">
+          <img className="welcome-logo" src={ghostwriterLogo} alt="" />
+        </div>
       </section>
       <section className="workflow-section" aria-labelledby="workflow-heading">
         <div className="section-heading">
