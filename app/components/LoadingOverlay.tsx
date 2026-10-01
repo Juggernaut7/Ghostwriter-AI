@@ -1,4 +1,5 @@
 import { LoaderCircle } from 'lucide-react';
+import ghostwriterLogo from '../../src/assets/logo.png';
 
 interface LoadingOverlayProps {
   active: boolean;
@@ -9,7 +10,8 @@ export function LoadingOverlay({ active, label }: LoadingOverlayProps) {
   if (!active) return null;
   return (
     <div className="loading-overlay" role="status">
-      <LoaderCircle className="spin" aria-hidden="true" size={21} />
+      <img src={ghostwriterLogo} alt="" aria-hidden="true" className="loading-mark" />
+      <LoaderCircle className="spin" aria-hidden="true" size={20} />
       <span>{label}</span>
     </div>
   );

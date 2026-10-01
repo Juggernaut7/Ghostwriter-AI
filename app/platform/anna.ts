@@ -42,6 +42,7 @@ interface AnnaRuntimeModule {
 declare global {
   interface Window {
     ghostwriterAnna?: AnnaRuntime;
+    __ANNA_TOOL_IDS__?: Record<string, string>;
   }
 }
 
@@ -53,7 +54,7 @@ export async function connectAnna(): Promise<AnnaRuntime | null> {
     const sdk = await import(/* @vite-ignore */ runtimeUrl) as AnnaRuntimeModule;
     const runtime = await sdk.AnnaAppRuntime.connect();
     window.ghostwriterAnna = runtime;
-    await runtime.window.set_title({ title: 'Ghostwriter AI' });
+    await runtime.window.set_title({ title: 'Ghostwriter' });
     await runtime.window.ready({});
     return runtime;
   } catch {

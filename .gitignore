@@ -35,3 +35,6 @@ executas/dist
 # Optional: OS-specific system files
 Thumbs.db
 .env
+
+# Anna local dev state
+.anna/

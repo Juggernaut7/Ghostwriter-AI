@@ -1,7 +1,8 @@
 import type { WorkflowId, WorkflowValues } from '../types/domain';
 import type { AnnaRuntime, LlmEvent, LlmRequest } from '../platform/anna';
 
-const TOOL_ID = 'tool-dev-ghostwriter-ai';
+const WORKFLOW_EXECUTA_HANDLE = 'ghostwriter';
+const LOCAL_WORKFLOW_TOOL_ID = 'tool-dev-ghostwriter-ai';
 
 interface PreparedPrompt {
   systemPrompt: string;
@@ -66,7 +67,7 @@ export async function generateCompletion(
   onToken: (text: string) => void,
 ): Promise<string> {
   const raw = await anna.tools.invoke({
-    tool_id: TOOL_ID,
+    tool_id: window.__ANNA_TOOL_IDS__?.[WORKFLOW_EXECUTA_HANDLE] || LOCAL_WORKFLOW_TOOL_ID,
     method: 'prepare',
     args: { workflow, input },
   });
