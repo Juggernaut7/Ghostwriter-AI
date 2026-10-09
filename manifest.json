@@ -22,7 +22,7 @@
       }
     ],
     "host_api": {
-      "tools": ["bundled:ghostwriter"],
+      "tools": ["required:bundled:ghostwriter"],
       "llm": ["stream", "complete"],
       "storage": ["get", "set"],
       "window": ["set_title", "ready"]
