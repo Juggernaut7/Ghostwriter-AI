@@ -20,10 +20,10 @@ jobs:
           GHOSTWRITER_EXECUTA_BINARY: '1'
         run: npm run test:executa:protocol
       - name: Record artifact checksum
-        run: sha256sum executas/ghostwriter/dist/artifacts/ghostwriter-ai-executa-1.0.3-linux-x86_64.tar.gz > executas/ghostwriter/dist/artifacts/SHA256SUMS
+        run: sha256sum executas/ghostwriter/dist/artifacts/ghostwriter-ai-executa-1.0.4-linux-x86_64.tar.gz > executas/ghostwriter/dist/artifacts/SHA256SUMS
       - uses: actions/upload-artifact@v4
         with:
-          name: ghostwriter-ai-executa-1.0.3-linux-x86_64
+          name: ghostwriter-ai-executa-1.0.4-linux-x86_64
           path: |
-            executas/ghostwriter/dist/artifacts/ghostwriter-ai-executa-1.0.3-linux-x86_64.tar.gz
+            executas/ghostwriter/dist/artifacts/ghostwriter-ai-executa-1.0.4-linux-x86_64.tar.gz
             executas/ghostwriter/dist/artifacts/SHA256SUMS

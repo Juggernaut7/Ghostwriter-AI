@@ -1,7 +1,7 @@
 {
   "slug": "ghostwriter-ai",
   "name": "Ghostwriter AI workflow engine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "executa_type": "tool",
   "description": "Validates workflow inputs and prepares centralized writing prompts.",
   "tool_id": "tool-dev-ghostwriter-ai",
@@ -9,9 +9,10 @@
   "command": ["node", "plugin.mjs"],
   "distribution": {
     "type": "binary",
+    "supports_protocol": true,
     "binary_artifacts": {
       "linux-x86_64": {
-        "path": "dist/artifacts/ghostwriter-ai-executa-1.0.3-linux-x86_64.tar.gz",
+        "path": "dist/artifacts/ghostwriter-ai-executa-1.0.4-linux-x86_64.tar.gz",
         "entrypoint": "bin/ghostwriter-ai-executa"
       }
     }

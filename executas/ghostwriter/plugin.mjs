@@ -5,7 +5,7 @@ import { prepareWorkflow } from '../dist/plugin/handler.js';
 const manifest = {
   name: 'ghostwriter-ai',
   display_name: 'Ghostwriter AI workflow engine',
-  version: '1.0.3',
+  version: '1.0.4',
   description: 'Prepares validated prompts for Ghostwriter writing workflows.',
   host_capabilities: [],
   tools: [{
