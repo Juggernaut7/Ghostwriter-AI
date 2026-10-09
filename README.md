@@ -80,6 +80,32 @@ npm run anna:dev:offline
 
 Offline mode disables LLM calls and uses legacy in-memory storage.
 
+## Production Executa Distribution
+
+The App uses the stable `ghostwriter` bundled handle. Keep
+`required_executas[].tool_id` as `bundled:ghostwriter` and grant the matching
+UI tool in `ui.host_api.tools` as `required:bundled:ghostwriter`. The
+`tool-dev-ghostwriter-ai` value in `executas/ghostwriter/executa.json` is only
+the local development ID; `.anna/executas.lock.json` maps the handle to the
+existing production tool ID.
+
+The Node Executa is distributed to Cloud Agents as a standalone Linux x86_64
+binary; the source and npm package remain available for local development and
+other compatible agents. `npm run build:executa:binary` bundles the protocol
+entrypoint, packages it with the pinned Node 22 toolchain, and creates the
+archive referenced by `executas/ghostwriter/executa.json`. The archive contains
+`bin/ghostwriter-ai-executa` and a root `manifest.json`. Run the
+`Build Executa binary` GitHub Actions workflow to build and exercise the Linux
+artifact on Linux before publishing it.
+
+In Anna's existing Tool configuration, set the distribution type to `binary`
+and configure the `linux-x86_64` artifact using the path and entrypoint in
+`executas/ghostwriter/executa.json`. Keep the existing production Tool ID.
+The CLI status command does not report the server-side distribution setting;
+verify it in the Anna Tool configuration page before publishing a replacement
+Executa version. The local development command remains `node plugin.mjs`, and
+the npm package is retained.
+
 ## Current Persistence Behavior
 
 The UI uses Anna's native `anna.storage.get/set` Host API methods, allowed by `manifest.json`. These are Anna host calls, not `localStorage`, `sessionStorage`, IndexedDB, or an external database.

@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "build:executa": "tsc -p executas/tsconfig.json",
+    "build:executa:binary": "npm run build:executa && node scripts/build-executa-binary.mjs",
+    "test:executa:protocol": "node --test tests/executa-protocol.test.mjs",
     "test": "npm run build:executa && node --test tests/*.test.mjs",
     "anna:validate": "anna-app validate --manifest manifest.json --bundle bundle",
     "anna:dev": "anna-app dev --manifest manifest.json --bundle bundle --slug ghostwriter-ai",
@@ -31,11 +33,14 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "@yao-pkg/pkg": "6.23.0",
+    "esbuild": "0.28.2",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "typescript": "^5.9.3",
+    "tar": "7.5.22",
     "typescript-eslint": "^8.71.0",
     "vite": "^7.0.4"
   }
