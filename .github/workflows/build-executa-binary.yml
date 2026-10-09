@@ -1,6 +1,9 @@
 name: Build Executa binary
 
 on:
+  push:
+    branches:
+      - fix/ghostwriter-protocol-distribution-v1.0.4
   workflow_dispatch:
 
 jobs:
