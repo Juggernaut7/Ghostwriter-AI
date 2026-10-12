@@ -38,7 +38,7 @@ test('Executa handles multiple JSON-RPC requests in one process', () => {
   assert.equal(responses[0].result.protocolVersion, '2.0');
   assert.equal(responses[0].result.server_info.name, 'ghostwriter-ai');
   assert.equal(responses[1].result.name, 'ghostwriter-ai');
-  assert.equal(responses[1].result.version, '1.0.3');
+  assert.equal(responses[1].result.version, '1.0.4');
   assert.deepEqual(responses[2].result, { status: 'ready' });
   assert.equal(responses[3].result.success, true);
   assert.equal(responses[4].error.code, -32601);

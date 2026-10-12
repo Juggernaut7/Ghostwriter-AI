@@ -98,13 +98,21 @@ archive referenced by `executas/ghostwriter/executa.json`. The archive contains
 `Build Executa binary` GitHub Actions workflow to build and exercise the Linux
 artifact on Linux before publishing it.
 
-In Anna's existing Tool configuration, set the distribution type to `binary`
-and configure the `linux-x86_64` artifact using the path and entrypoint in
-`executas/ghostwriter/executa.json`. Keep the existing production Tool ID.
-The CLI status command does not report the server-side distribution setting;
-verify it in the Anna Tool configuration page before publishing a replacement
-Executa version. The local development command remains `node plugin.mjs`, and
-the npm package is retained.
+In Anna's existing Tool configuration, set the distribution type to `binary`,
+enable protocol support, and configure the `linux-x86_64` artifact using the
+path and entrypoint in `executas/ghostwriter/executa.json`. Keep the existing
+production Tool ID. The repository manifest must also set
+`distribution.supports_protocol` to `true`; keep the saved Anna Tool settings
+and repository manifest aligned.
+
+Published Executa versions are immutable snapshots. Changing the Tool
+configuration later does not repair a snapshot that was published without
+protocol support. Update the repository manifest, build and verify the Linux
+artifact, upload it, and publish a replacement Executa version. The CLI status
+command does not report the server-side distribution setting; verify the saved
+distribution and latest version in Anna before retrying Agent installation.
+The local development command remains `node plugin.mjs`, and the npm package
+is retained.
 
 ## Current Persistence Behavior
 
